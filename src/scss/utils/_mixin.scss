@@ -1,0 +1,42 @@
+@mixin backdrop($color) {
+  background-color: $color;
+  backdrop-filter: blur(15px) saturate(100%) brightness(100%);
+}
+
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin transition {
+  transition: all 150ms ease-in-out;
+}
+
+@mixin circle-config($bg-color, $z-index) {
+  position: absolute;
+  background-color: $bg-color;
+  border-radius: 50%;
+  z-index: $z-index;
+}
+
+@mixin cardsCircle($color, $bg-color) {
+  @include widthHeight(65px, 65px);
+  @include flex-center;
+  background-color: $bg-color;
+  color: $color;
+  border: 4px $color solid;
+  // -webkit-text-stroke: 1px $main-color;
+  border-radius: 50%;
+}
